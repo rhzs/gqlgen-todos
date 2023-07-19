@@ -1,10 +1,11 @@
 # GQLGEN Todo Example
 
-This service is to demonstrate how we can develop GraphQL service in Golang that can have better layout, and follow Effective Go approach.
+This service is to demonstrate how we can develop GraphQL service in Golang. 
+This example emphasize on how we can structure our Golang code with GraphQL, use dependency injection pattern, and follow Effective Go approach.
 
 ## Running The Service
 
-To run the service, you can it directly with `go run cmd/main.go`.
+To run the service, you can run it directly with `go run cmd/main.go`.
 
 Don't worry about not be able to resolve dependencies, you don't have to download dependencies. It will always be there (committed).
 
@@ -42,6 +43,8 @@ If you wish to regenerate the generated file, you can use `go run github.com/99d
 `internal` folder is created and inside is declaration of GQL handler for `mutation`, `query`, and `resolver`.
 
 The `storage` package used for connecting to database / cache / file storage.
+
+The initialization happened in `cmd/main.go`. In `main.go`, we define how we can inject `TODO Storage` to GraphQL resolver. Later, `TODO Storage` used by `mutation` and `query` resolver.
 
 ## Unit Testing
 
