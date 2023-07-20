@@ -50,6 +50,22 @@ The initialization happened in `cmd/main.go`. In `main.go`, we define how we can
 
 We use `testify` and `mockery` for unit testing approach. This may not be the right taste for some people. For me, this is the robust and easiest way to do.
 
+Testing Coverage Results using `package-cover`:
+
+```text
+------------------------------------------------------------------------------------------------------------------------------------------
+| Branch                   | Dir                      |                                                                                  |
+|   Cov% |    Cov |  Stmts |   Cov% |    Cov |  Stmts | Package                                                                          |
+------------------------------------------------------------------------------------------------------------------------------------------
+| 100.00 |      0 |      0 | 100.00 |      0 |      0 | github.com/rhzs/gqlgen-todos/graph/                                              |
+| 100.00 |      0 |      0 | 100.00 |      0 |      0 | github.com/rhzs/gqlgen-todos/graph/model/                                        |
+| 100.00 |      5 |      5 | 100.00 |      5 |      5 | github.com/rhzs/gqlgen-todos/internal/mutation/                                  |
+| 100.00 |      2 |      2 | 100.00 |      2 |      2 | github.com/rhzs/gqlgen-todos/internal/query/                                     |
+| 100.00 |      3 |      3 | 100.00 |      3 |      3 | github.com/rhzs/gqlgen-todos/internal/resolver/                                  |
+| 100.00 |      3 |      3 | 100.00 |      3 |      3 | github.com/rhzs/gqlgen-todos/internal/storage/                                   |
+------------------------------------------------------------------------------------------------------------------------------------------
+```
+
 ## Credit
 
 Made in Jakarta with love (c) 2023.

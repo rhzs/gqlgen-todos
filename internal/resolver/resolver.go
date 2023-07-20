@@ -18,11 +18,16 @@ func New(todoStorage todoStorage) *resolver {
 }
 
 // Mutation returns MutationResolver implementation.
-func (r *resolver) Mutation() graph.MutationResolver { return mutation.NewResolver(r.todoStorage) }
+func (r *resolver) Mutation() graph.MutationResolver {
+	return mutation.NewResolver(r.todoStorage)
+}
 
 // Query returns QueryResolver implementation.
-func (r *resolver) Query() graph.QueryResolver { return query.NewResolver(r.todoStorage) }
+func (r *resolver) Query() graph.QueryResolver {
+	return query.NewResolver(r.todoStorage)
+}
 
+//go:generate mockery --name=todoStorage --case=underscore --inpackage --testonly
 type todoStorage interface {
 	Store(todo *model.Todo)
 	Load() []*model.Todo

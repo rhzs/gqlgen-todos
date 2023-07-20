@@ -17,6 +17,7 @@ func NewResolver(todoStorage todoStorage) *resolver {
 	}
 }
 
+//go:generate mockery --name=todoStorage --case=underscore --inpackage --testonly
 type todoStorage interface {
 	Store(todo *model.Todo)
 }

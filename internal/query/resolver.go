@@ -23,6 +23,7 @@ func (r *resolver) Todos(ctx context.Context) ([]*model.Todo, error) {
 	return r.todoStorage.Load(), nil
 }
 
+//go:generate mockery --name=todoStorage --case=underscore --inpackage --testonly
 type todoStorage interface {
 	Load() []*model.Todo
 }
